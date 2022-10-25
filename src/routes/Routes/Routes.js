@@ -6,6 +6,7 @@ import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
 import Blog from "../../Pages/Others/Blog/Blog";
 import FAQ from "../../Pages/Others/FAQ/FAQ";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 
 export const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/courses',
-        element: <Courses></Courses>
+        element: <PrivateRoutes><Courses></Courses></PrivateRoutes>
       },
       {
         path: '/faq',
