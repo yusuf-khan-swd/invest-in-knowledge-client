@@ -25,12 +25,15 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log(email, password);
-
     logIn(email, password)
       .then(result => {
         const user = result.user;
         console.log(user);
+        toast.success('Login successful!!');
+        form.reset();
+        const newError = { ...errors };
+        newError.loginError = '';
+        setErrors(newError);
       })
       .catch(error => {
         console.error('error: ', error);
