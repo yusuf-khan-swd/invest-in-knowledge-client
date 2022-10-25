@@ -3,7 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
@@ -12,6 +12,7 @@ const Login = () => {
     githubError: '',
     loginError: ''
   });
+  const navigate = useNavigate();
 
   const { singInWithProvider, logIn } = useContext(AuthContext);
 
@@ -34,6 +35,7 @@ const Login = () => {
         const newError = { ...errors };
         newError.loginError = '';
         setErrors(newError);
+        navigate('/');
       })
       .catch(error => {
         console.error('error: ', error);
