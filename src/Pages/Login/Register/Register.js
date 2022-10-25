@@ -12,7 +12,7 @@ const Register = () => {
     registerError: '',
   });
 
-  const { singInWithProvider, createUser } = useContext(AuthContext);
+  const { singInWithProvider, createUser, updateUserProfile } = useContext(AuthContext);
 
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
@@ -42,6 +42,7 @@ const Register = () => {
         const newError = { ...errors };
         newError.registerError = '';
         setErrors(newError);
+        handleUpdateUserProfile(name, photoURL);
       }))
       .catch((error) => {
         console.error('error', error);
@@ -49,6 +50,19 @@ const Register = () => {
         newError.registerError = error.message;
         setErrors(newError);
         form.reset();
+      })
+  };
+
+  const handleUpdateUserProfile = (name, photoURL) => {
+    const profile = {
+      displayName: name,
+      photoURL: photoURL
+    };
+
+    updateUserProfile(profile)
+      .then(() => { })
+      .catch((error) => {
+        console.error('error: ', error);
       })
   };
 
