@@ -2,8 +2,7 @@ import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const CourseDetails = () => {
-  const details = useLoaderData();
-  const { courseName, courseId } = details;
+  const { courseName, courseId } = useLoaderData();
 
   return (
     <div>
