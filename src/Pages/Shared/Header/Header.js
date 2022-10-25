@@ -11,7 +11,18 @@ const Header = () => {
       <Link to='/courses'>Courses</Link>
       <Link to='/faq'>FAQ</Link>
       <Link to='/blog'>Blog</Link>
-      <span>{user.displayName}</span>
+      {
+        user?.uid ?
+          <>
+            <span> {user.displayName} </span>
+            <button>logout</button>
+          </>
+          :
+          <>
+            <Link to='/login'>Login</Link>
+            <Link to='/register'>Register</Link>
+          </>
+      }
     </nav>
   );
 };
