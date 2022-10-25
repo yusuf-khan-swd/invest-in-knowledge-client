@@ -32,12 +32,12 @@ export const router = createBrowserRouter([
       },
       {
         path: '/checkout/:courseId',
-        element: <Checkout></Checkout>,
+        element: <PrivateRoutes><Checkout></Checkout></PrivateRoutes>,
         loader: ({ params }) => fetch(`http://localhost:5000/checkout/${params.courseId}`)
       },
       {
         path: '/faq',
-        element: <PrivateRoutes><FAQ></FAQ></PrivateRoutes>
+        element: <FAQ></FAQ>
       },
       {
         path: '/blog',
