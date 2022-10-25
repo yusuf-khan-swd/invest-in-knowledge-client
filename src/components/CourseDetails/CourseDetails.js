@@ -8,7 +8,7 @@ const CourseDetails = () => {
   return (
     <div>
       <h2>Course Details of : {courseName}</h2>
-      <Link to={`/courses/${courseId}`}>
+      <Link to={`/checkout/${courseId}`}>
         <button>Get premium access</button>
       </Link>
     </div>
