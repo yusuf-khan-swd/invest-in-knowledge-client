@@ -11,8 +11,6 @@ const Login = () => {
     githubError: ''
   });
 
-  console.log(errors)
-
   const { singInWithProvider } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
@@ -23,7 +21,9 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         toast.success('Google login successful');
-        setErrors(...errors, errors.googleError = '');
+        const newError = { ...errors };
+        newError.googleError = '';
+        setErrors(newError);
       })
       .catch((error) => {
         console.error('error: ', error);
@@ -39,7 +39,9 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         toast.success('Github login successful');
-        setErrors(...errors, errors.githubError = '');
+        const newError = { ...errors };
+        newError.githubError = '';
+        setErrors(newError);
       })
       .catch((error) => {
         console.error('error: ', error);
