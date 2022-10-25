@@ -38,6 +38,7 @@ const Register = () => {
         const user = result.user;
         console.log(user);
         toast.success('Registration is Successful!!');
+        form.reset();
         const newError = { ...errors };
         newError.registerError = '';
         setErrors(newError);
@@ -47,6 +48,7 @@ const Register = () => {
         const newError = { ...errors };
         newError.registerError = error.message;
         setErrors(newError);
+        form.reset();
       })
   };
 
