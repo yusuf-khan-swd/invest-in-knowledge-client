@@ -135,10 +135,10 @@ const Register = () => {
           <button type='submit'>Submit</button>
           <button type='button'>Button</button>
         </div>
-        <div>
-          Already have an account? <Link to='/login'>Login</Link>
-        </div>
       </form>
+      <div>
+        Already have an account? <Link to='/login'>Login</Link>
+      </div>
       <button onClick={handleGoogleLogIn}>Google Sign In</button>
       {errors.googleError}
       <button onClick={handleGithubLogIn}>Github Sign In</button>

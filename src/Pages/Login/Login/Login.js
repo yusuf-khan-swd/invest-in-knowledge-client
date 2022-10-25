@@ -9,7 +9,8 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 const Login = () => {
   const [errors, setErrors] = useState({
     googleError: '',
-    githubError: ''
+    githubError: '',
+    loginError: ''
   });
 
   const { singInWithProvider, logIn } = useContext(AuthContext);
@@ -33,6 +34,9 @@ const Login = () => {
       })
       .catch(error => {
         console.error('error: ', error);
+        const newError = { ...errors };
+        newError.loginError = error.message;
+        setErrors(newError);
       })
   };
 
@@ -86,13 +90,16 @@ const Login = () => {
           <input type="password" name='password' id='password' />
         </div>
         <div>
+          {errors.loginError}
+        </div>
+        <div>
           <button type='submit'>Submit</button>
           <button type='button'>Button</button>
         </div>
-        <div>
-          Don't have an account? <Link to='/register'>Create an account</Link>
-        </div>
       </form>
+      <div>
+        Don't have an account? <Link to='/register'>Create an account</Link>
+      </div>
       <button onClick={handleGoogleLogIn}>Google Sign In</button>
       {errors.googleError}
       <button onClick={handleGithubLogIn}>Github Sign In</button>
