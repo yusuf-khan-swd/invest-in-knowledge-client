@@ -15,6 +15,19 @@ const Register = () => {
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
 
+  const handleFormSubmit = event => {
+    event.preventDefault();
+    const form = event.target;
+
+    const name = form.name.value;
+    const photoURL = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const confirm = form.confirm.value;
+
+    console.log(name, photoURL, email, password, confirm);
+  };
+
   const handleGoogleLogIn = () => {
     singInWithProvider(googleProvider)
       .then((result) => {
@@ -55,6 +68,32 @@ const Register = () => {
   return (
     <div>
       <h2>Register Page</h2>
+      <form onSubmit={handleFormSubmit}>
+        <div>
+          <label htmlFor="name">Full Name: </label>
+          <input type="text" name='name' id='name' />
+        </div>
+        <div>
+          <label htmlFor="photo">photoURL: </label>
+          <input type="text" name='photo' id='photo' />
+        </div>
+        <div>
+          <label htmlFor="email">Email: </label>
+          <input type="email" name='email' id='email' />
+        </div>
+        <div>
+          <label htmlFor="password">Password: </label>
+          <input type="password" name='password' id='password' />
+        </div>
+        <div>
+          <label htmlFor="confirm">Confirm Password: </label>
+          <input type="password" name='confirm' id='confirm' />
+        </div>
+        <div>
+          <button type='submit'>Submit</button>
+          <button type='button'>Button</button>
+        </div>
+      </form>
       <button onClick={handleGoogleLogIn}>Google Sign In</button>
       {errors.googleError}
       <button onClick={handleGithubLogIn}>Github Sign In</button>
