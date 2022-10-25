@@ -1,10 +1,23 @@
 import React from 'react';
 import { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        toast.success('Logout is successful');
+      })
+      .catch(error => {
+        console.error('error: ', error)
+        toast.error('Logout is not successful');
+      })
+  };
+
   return (
     <nav>
       <Link to='/home'>Home</Link>
@@ -15,7 +28,7 @@ const Header = () => {
         user?.uid ?
           <>
             <span> {user.displayName} </span>
-            <button>logout</button>
+            <button onClick={handleLogOut}>logout</button>
           </>
           :
           <>
