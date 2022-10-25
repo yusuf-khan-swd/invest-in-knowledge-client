@@ -58,6 +58,7 @@ const Login = () => {
         const newError = { ...errors };
         newError.googleError = '';
         setErrors(newError);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error('error: ', error);
@@ -76,6 +77,7 @@ const Login = () => {
         const newError = { ...errors };
         newError.githubError = '';
         setErrors(newError);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error('error: ', error);
