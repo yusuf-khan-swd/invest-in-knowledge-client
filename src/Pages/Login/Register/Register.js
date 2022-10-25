@@ -9,6 +9,7 @@ const Register = () => {
   const [errors, setErrors] = useState({
     googleError: '',
     githubError: '',
+    registerError: '',
   });
 
   const { singInWithProvider, createUser } = useContext(AuthContext);
@@ -31,6 +32,22 @@ const Register = () => {
     if (password !== confirm) {
       return toast.error(`Password did not matched!!`);
     }
+
+    createUser(email, password)
+      .then((result => {
+        const user = result.user;
+        console.log(user);
+        toast.success('Registration is Successful!!');
+        const newError = { ...errors };
+        newError.registerError = '';
+        setErrors(newError);
+      }))
+      .catch((error) => {
+        console.error('error', error);
+        const newError = { ...errors };
+        newError.registerError = error.message;
+        setErrors(newError);
+      })
   };
 
   const handleGoogleLogIn = () => {
@@ -93,6 +110,9 @@ const Register = () => {
         <div>
           <label htmlFor="confirm">Confirm Password: </label>
           <input type="password" name='confirm' id='confirm' />
+        </div>
+        <div>
+          {errors.registerError}
         </div>
         <div>
           <button type='submit'>Submit</button>
