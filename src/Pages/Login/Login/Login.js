@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
@@ -6,10 +6,16 @@ import toast from 'react-hot-toast';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
-  const [error, setError] = useState('');
+  const [errors, setErrors] = useState({
+    googleError: '',
+    githubError: ''
+  });
+
+  console.log(errors)
 
   const { singInWithProvider } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
 
   const handleGoogleLogIn = () => {
     singInWithProvider(googleProvider)
@@ -17,11 +23,29 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         toast.success('Google login successful');
-        setError('');
+        setErrors(...errors, errors.googleError = '');
       })
       .catch((error) => {
         console.error('error: ', error);
-        setError(error.message);
+        const newError = { ...errors };
+        newError.googleError = error.message;
+        setErrors(newError);
+      })
+  };
+
+  const handleGithubLogIn = () => {
+    singInWithProvider(githubProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        toast.success('Github login successful');
+        setErrors(...errors, errors.githubError = '');
+      })
+      .catch((error) => {
+        console.error('error: ', error);
+        const newError = { ...errors };
+        newError.githubError = error.message;
+        setErrors(newError);
       })
 
   };
@@ -30,7 +54,9 @@ const Login = () => {
     <div>
       <h2>Login Page</h2>
       <button onClick={handleGoogleLogIn}>Google Sign In</button>
-      {error}
+      {errors.googleError}
+      <button onClick={handleGithubLogIn}>Github Sign In</button>
+      {errors.githubError}
     </div>
   );
 };
