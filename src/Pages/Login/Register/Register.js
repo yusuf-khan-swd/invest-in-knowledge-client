@@ -7,7 +7,7 @@ const Register = () => {
 
   return (
     <div>
-      <h2>Register Page</h2>
+      <h2>Register Page {user.displayName} </h2>
     </div>
   );
 };
