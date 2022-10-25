@@ -8,10 +8,11 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 const Register = () => {
   const [errors, setErrors] = useState({
     googleError: '',
-    githubError: ''
+    githubError: '',
   });
 
-  const { singInWithProvider } = useContext(AuthContext);
+  const { singInWithProvider, createUser } = useContext(AuthContext);
+
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
 
@@ -26,6 +27,10 @@ const Register = () => {
     const confirm = form.confirm.value;
 
     console.log(name, photoURL, email, password, confirm);
+
+    if (password !== confirm) {
+      return toast.error(`Password did not matched!!`);
+    }
   };
 
   const handleGoogleLogIn = () => {
