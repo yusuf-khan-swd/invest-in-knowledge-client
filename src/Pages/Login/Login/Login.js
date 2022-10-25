@@ -12,8 +12,19 @@ const Login = () => {
   });
 
   const { singInWithProvider } = useContext(AuthContext);
+
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
+
+  const handleFormSubmit = event => {
+    event.preventDefault();
+    const form = event.target;
+
+    const email = form.email.value;
+    const password = form.password.value;
+
+    console.log(email, password);
+  };
 
   const handleGoogleLogIn = () => {
     singInWithProvider(googleProvider)
@@ -55,6 +66,20 @@ const Login = () => {
   return (
     <div>
       <h2>Login Page</h2>
+      <form onSubmit={handleFormSubmit}>
+        <div>
+          <label htmlFor="email">Email: </label>
+          <input type="email" name='email' id='email' />
+        </div>
+        <div>
+          <label htmlFor="password">Password: </label>
+          <input type="password" name='password' id='password' />
+        </div>
+        <div>
+          <button type='submit'>Submit</button>
+          <button type='button'>Button</button>
+        </div>
+      </form>
       <button onClick={handleGoogleLogIn}>Google Sign In</button>
       {errors.googleError}
       <button onClick={handleGithubLogIn}>Github Sign In</button>
