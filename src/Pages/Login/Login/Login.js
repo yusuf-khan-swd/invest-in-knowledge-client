@@ -12,7 +12,7 @@ const Login = () => {
     githubError: ''
   });
 
-  const { singInWithProvider } = useContext(AuthContext);
+  const { singInWithProvider, logIn } = useContext(AuthContext);
 
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
@@ -25,6 +25,15 @@ const Login = () => {
     const password = form.password.value;
 
     console.log(email, password);
+
+    logIn(email, password)
+      .then(result => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch(error => {
+        console.error('error: ', error);
+      })
   };
 
   const handleGoogleLogIn = () => {
