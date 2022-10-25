@@ -18,7 +18,7 @@ const Login = () => {
 
   const from = location.state?.from?.pathname || "/";
 
-  const { singInWithProvider, logIn } = useContext(AuthContext);
+  const { singInWithProvider, logIn, setLoading } = useContext(AuthContext);
 
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
@@ -46,6 +46,9 @@ const Login = () => {
         const newError = { ...errors };
         newError.loginError = error.message;
         setErrors(newError);
+      })
+      .finally(() => {
+        setLoading(false);
       })
   };
 
