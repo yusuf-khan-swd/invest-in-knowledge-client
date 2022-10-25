@@ -3,6 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
@@ -133,6 +134,9 @@ const Register = () => {
         <div>
           <button type='submit'>Submit</button>
           <button type='button'>Button</button>
+        </div>
+        <div>
+          Already have an account? <Link to='/login'>Login</Link>
         </div>
       </form>
       <button onClick={handleGoogleLogIn}>Google Sign In</button>
