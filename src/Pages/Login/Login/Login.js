@@ -3,7 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import toast from 'react-hot-toast';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
@@ -12,7 +12,11 @@ const Login = () => {
     githubError: '',
     loginError: ''
   });
+
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   const { singInWithProvider, logIn } = useContext(AuthContext);
 
@@ -35,7 +39,7 @@ const Login = () => {
         const newError = { ...errors };
         newError.loginError = '';
         setErrors(newError);
-        navigate('/');
+        navigate(from, { replace: true });
       })
       .catch(error => {
         console.error('error: ', error);
