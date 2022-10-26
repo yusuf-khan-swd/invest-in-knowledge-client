@@ -43,9 +43,11 @@ const CourseDetails = () => {
           ))}
         </div>
         <div>
-          <button className="inline-flex border w-full items-center justify-center py-2 px-4 font-medium transition-colors duration-200 rounded-lg bg-amber-400 hover:bg-amber-600">
-            Get premium access
-          </button>
+          <Link to={`/checkout/${courseId}`}>
+            <button className="inline-flex border w-full items-center justify-center py-2 px-4 font-medium transition-colors duration-200 rounded-lg bg-amber-400 hover:bg-amber-600">
+              Get premium access
+            </button>
+          </Link>
         </div>
       </div>
     </div>
