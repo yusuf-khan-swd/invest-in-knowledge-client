@@ -26,7 +26,7 @@ const Home = () => {
             approach a project, including the best data structures and optimal
             algorithms to employ.
           </p>
-          <div className="mb-5">
+          <div className="mb-5 text-center">
             <div className="mb-5">
               <Link to='/courses'>
                 <button
@@ -36,14 +36,14 @@ const Home = () => {
                 </button>
               </Link>
             </div>
-            <Link to='/courses'>
+            <Link to='/login'>
               <button
                 className='inline-flex border uppercase m-2 items-center justify-center py-2 px-4 font-medium transition-colors duration-200 rounded-lg text-gray-300 bg-gray-700 hover:bg-gray-600'
               >
                 Login
               </button>
             </Link>
-            <Link to='/courses'>
+            <Link to='/register'>
               <button
                 className='inline-flex border uppercase m-2 items-center justify-center py-2 px-4 font-medium transition-colors duration-200 rounded-lg text-gray-300 bg-gray-700 hover:bg-gray-600'
               >
