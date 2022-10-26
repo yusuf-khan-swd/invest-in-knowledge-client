@@ -110,9 +110,9 @@ const Header = () => {
                     <li>
                       {
                         user?.photoURL ?
-                          <img alt="" src={user?.photoURL} title={user?.displayName} className="object-cover cursor w-12 h-12 rounded-full shadow dark:bg-gray-500" />
+                          <img alt="" src={user?.photoURL} title={user?.displayName} className="object-cover cursor-pointer w-12 h-12 rounded-full shadow dark:bg-gray-500" />
                           :
-                          <FaUserAlt></FaUserAlt>
+                          <FaUserAlt title={user?.displayName} className='text-xl cursor-pointer'></FaUserAlt>
                       }
                     </li>
                     <li>
