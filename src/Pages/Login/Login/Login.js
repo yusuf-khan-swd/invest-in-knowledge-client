@@ -94,12 +94,12 @@ const Login = () => {
   };
 
   return (
-    <div className='bg-gray-600'>
+    <div className='bg-gray-900'>
       <div className="container mx-auto">
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div className="flex flex-col items-center justify-between xl:flex-row">
             <div className="w-full max-w-xl xl:px-8 xl:w-5/12 mx-auto">
-              <div className="bg-gray-300 rounded shadow-2xl p-7 sm:p-10">
+              <div className="bg-gray-100 rounded shadow-2xl p-7 sm:p-10">
                 <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                   Please Login
                 </h3>
