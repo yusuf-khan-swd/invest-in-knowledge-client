@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
-import { } from 'react-icons/fa';
+import { FaUserAlt } from 'react-icons/fa';
 
 
 const Header = () => {
@@ -75,7 +75,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  href="/faq"
+                  to="/faq"
                   aria-label="faq"
                   title="Frequently asked question"
                   className="font-medium tracking-wide transition-colors duration-200 hover:text-white"
@@ -94,7 +94,7 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <label for="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-400">
+                <label htmlFor="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-400">
                   <span>Light</span>
                   <span className="relative">
                     <input id="Toggle1" type="checkbox" className="hidden peer" />
@@ -105,21 +105,50 @@ const Header = () => {
                 </label>
               </li>
               {
-                user?.photoURL ?
-                  <li>
-                    <img alt="" src="https://source.unsplash.com/100x100/?portrait" className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
-                  </li>
+                user?.uid ?
+                  <>
+                    <li>
+                      {
+                        user?.photoURL ?
+                          <img alt="" src={user?.photoURL} title={user?.displayName} className="object-cover cursor w-12 h-12 rounded-full shadow dark:bg-gray-500" />
+                          :
+                          <FaUserAlt></FaUserAlt>
+                      }
+                    </li>
+                    <li>
+                      <button
+                        onClick={handleLogOut}
+                        className="inline-flex items-center justify-center h-9 py px-4 outline font-medium transition-colors duration-200 rounded hover:text-gray-300"
+                        aria-label="Sign up"
+                        title="Sign up"
+                      >
+                        Log Out
+                      </button>
+                    </li>
+                  </>
                   :
-                  <li>
-                    <Link
-                      to="/login"
-                      className="inline-flex items-center justify-center h-9 py px-6 outline font-medium transition-colors duration-200 rounded hover:text-gray-300"
-                      aria-label="Sign up"
-                      title="Sign up"
-                    >
-                      Login
-                    </Link>
-                  </li>
+                  <>
+                    <li>
+                      <Link
+                        to="/login"
+                        className="inline-flex items-center justify-center h-9 py px-4 outline font-medium transition-colors duration-200 rounded hover:text-gray-300"
+                        aria-label="Sign up"
+                        title="Sign up"
+                      >
+                        Login
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/register"
+                        className="inline-flex items-center justify-center h-9 py px-4 outline font-medium transition-colors duration-200 rounded hover:text-gray-300"
+                        aria-label="Sign up"
+                        title="Sign up"
+                      >
+                        Sign Up
+                      </Link>
+                    </li>
+                  </>
               }
             </ul>
             <div className="lg:hidden">
@@ -129,7 +158,7 @@ const Header = () => {
                 className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline"
                 onClick={() => setIsMenuOpen(true)}
               >
-                <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
+                <svg className="w-5 text-gray-200" viewBox="0 0 24 24">
                   <path
                     fill="currentColor"
                     d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"
