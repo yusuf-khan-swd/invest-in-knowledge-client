@@ -28,6 +28,10 @@ const Header = () => {
     if (isChecked) {
       toast.success('YAY!! Dark Theme On.')
     }
+
+    if (!isChecked) {
+      toast.success('Light Theme On!!')
+    }
   };
 
   return (
