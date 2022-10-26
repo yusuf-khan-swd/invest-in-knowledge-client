@@ -8,7 +8,6 @@ import logo from '../../../assets/logo/logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [darkTheme, setDarkThem] = useState(false);
 
   const { user, logOut } = useContext(AuthContext);
 
@@ -25,13 +24,11 @@ const Header = () => {
 
   const handleDarkTheme = event => {
     const isChecked = event.target.checked;
-    setDarkThem(isChecked);
 
     if (isChecked) {
       toast.success('YAY!! Dark Theme On.')
     }
   };
-
 
   return (
     <nav>
