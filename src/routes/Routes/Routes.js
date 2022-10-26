@@ -7,6 +7,7 @@ import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
 import Blog from "../../Pages/Others/Blog/Blog";
+import Error from "../../Pages/Others/Error/Error";
 import FAQ from "../../Pages/Others/FAQ/FAQ";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 
@@ -14,7 +15,7 @@ export const router = createBrowserRouter([
   {
     path: '/',
     element: <Main></Main>,
-    errorElement: <div>This is Error Page its have to make</div>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: '/',
