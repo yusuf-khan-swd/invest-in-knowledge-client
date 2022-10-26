@@ -149,7 +149,7 @@ const Header = () => {
                   </>
               }
             </ul>
-            <div className="lg:hidden">
+            <div className="lg:hidden z-50">
               <button
                 aria-label="Open Menu"
                 title="Open Menu"
@@ -225,7 +225,7 @@ const Header = () => {
                             to="/home"
                             aria-label="Our home"
                             title="Our home"
-                            className="font-medium tracking-wide transition-colors duration-200 hover:text-white"
+                            className="font-medium tracking-wide transition-colors duration-200 hover:text-black"
                           >
                             Home
                           </Link>
@@ -235,7 +235,7 @@ const Header = () => {
                             to="/courses"
                             aria-label="Our courses"
                             title="Our courses"
-                            className="font-medium tracking-wide transition-colors duration-200 hover:text-white"
+                            className="font-medium tracking-wide transition-colors duration-200 hover:text-black"
                           >
                             Courses
                           </Link>
@@ -245,7 +245,7 @@ const Header = () => {
                             to="/faq"
                             aria-label="faq"
                             title="Frequently asked question"
-                            className="font-medium tracking-wide transition-colors duration-200 hover:text-white"
+                            className="font-medium tracking-wide transition-colors duration-200 hover:text-black"
                           >
                             FAQ
                           </Link>
@@ -255,7 +255,7 @@ const Header = () => {
                             to="/blog"
                             aria-label="blog"
                             title="Blog"
-                            className="font-medium tracking-wide transition-colors duration-200 hover:text-white"
+                            className="font-medium tracking-wide transition-colors duration-200 hover:text-black"
                           >
                             Blog
                           </Link>
