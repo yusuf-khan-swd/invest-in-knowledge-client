@@ -223,55 +223,102 @@ const Header = () => {
                     <nav>
                       <ul className="space-y-4">
                         <li>
-                          <a
-                            href="/"
-                            aria-label="Our product"
-                            title="Our product"
-                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-white"
+                          <Link
+                            to="/home"
+                            aria-label="Our home"
+                            title="Our home"
+                            className="font-medium tracking-wide transition-colors duration-200 hover:text-white"
                           >
-                            Product
-                          </a>
+                            Home
+                          </Link>
                         </li>
                         <li>
-                          <a
-                            href="/"
-                            aria-label="Our product"
-                            title="Our product"
-                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-white"
+                          <Link
+                            to="/courses"
+                            aria-label="Our courses"
+                            title="Our courses"
+                            className="font-medium tracking-wide transition-colors duration-200 hover:text-white"
                           >
-                            Features
-                          </a>
+                            Courses
+                          </Link>
                         </li>
                         <li>
-                          <a
-                            href="/"
-                            aria-label="Product pricing"
-                            title="Product pricing"
-                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-white"
+                          <Link
+                            to="/faq"
+                            aria-label="faq"
+                            title="Frequently asked question"
+                            className="font-medium tracking-wide transition-colors duration-200 hover:text-white"
                           >
-                            Pricing
-                          </a>
+                            FAQ
+                          </Link>
                         </li>
                         <li>
-                          <a
-                            href="/"
-                            aria-label="About us"
-                            title="About us"
-                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-white"
+                          <Link
+                            to="/blog"
+                            aria-label="blog"
+                            title="Blog"
+                            className="font-medium tracking-wide transition-colors duration-200 hover:text-white"
                           >
-                            About us
-                          </a>
+                            Blog
+                          </Link>
                         </li>
                         <li>
-                          <a
-                            href="/"
-                            className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                            aria-label="Sign up"
-                            title="Sign up"
-                          >
-                            Sign up
-                          </a>
+                          <label htmlFor="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-400">
+                            <span>Light</span>
+                            <span className="relative">
+                              <input id="Toggle1" type="checkbox" className="hidden peer" />
+                              <div className="w-10 h-6 rounded-full shadow-inner dark:bg-gray-400 peer-checked:dark:bg-violet-400"></div>
+                              <div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto dark:bg-gray-800"></div>
+                            </span>
+                            <span>Dark</span>
+                          </label>
                         </li>
+                        {
+                          user?.uid ?
+                            <>
+                              <li>
+                                {
+                                  user?.photoURL ?
+                                    <img alt="" src={user?.photoURL} title={user?.displayName} className="object-cover cursor-pointer w-12 h-12 rounded-full shadow dark:bg-gray-500" />
+                                    :
+                                    <FaUserAlt title={user?.displayName} className='text-xl cursor-pointer'></FaUserAlt>
+                                }
+                              </li>
+                              <li>
+                                <button
+                                  onClick={handleLogOut}
+                                  className="inline-flex items-center justify-center h-9 py px-4 outline font-medium transition-colors duration-200 rounded hover:text-gray-300"
+                                  aria-label="Sign up"
+                                  title="Sign up"
+                                >
+                                  Log Out
+                                </button>
+                              </li>
+                            </>
+                            :
+                            <>
+                              <li>
+                                <Link
+                                  to="/login"
+                                  className="inline-flex items-center justify-center h-9 py px-4 outline font-medium transition-colors duration-200 rounded hover:text-gray-300"
+                                  aria-label="Sign up"
+                                  title="Sign up"
+                                >
+                                  Login
+                                </Link>
+                              </li>
+                              <li>
+                                <Link
+                                  to="/register"
+                                  className="inline-flex items-center justify-center h-9 py px-4 outline font-medium transition-colors duration-200 rounded hover:text-gray-300"
+                                  aria-label="Sign up"
+                                  title="Sign up"
+                                >
+                                  Sign Up
+                                </Link>
+                              </li>
+                            </>
+                        }
                       </ul>
                     </nav>
                   </div>
