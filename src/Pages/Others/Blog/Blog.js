@@ -14,8 +14,8 @@ const Blog = () => {
           <div>
             <h3 className="font-semibold">What is cors?</h3>
             <p className="mt-1 dark:text-gray-400">
-              Its full Form is Cross-origin resource sharing.Its a resource
-              sharing is a mechanism that allows restricted resources on a web
+              Its full Form is Cross-origin resource sharing. Its a resource
+              sharing mechanism that allows restricted resources on a web
               page to be requested from another domain outside the domain from
               which the first resource was served. A web page may freely embed
               cross-origin images, stylesheets, scripts, iframes, and videos.
@@ -107,6 +107,7 @@ const Blog = () => {
           </div>
         </div>
       </div>
+      <hr />
     </section>
   );
 };
