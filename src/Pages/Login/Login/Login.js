@@ -5,6 +5,8 @@ import { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import googleLogo from '../../../assets/images/google.png';
+import githubLogo from '../../../assets/images/github.png';
 
 const Login = () => {
   const [errors, setErrors] = useState({
@@ -150,11 +152,25 @@ const Login = () => {
                   </p>
                 </form>
               </div>
-              <div>
-                <button>Google Login</button>
-              </div>
-              <div>
-                <button>Github Login</button>
+              <div className='mt-8'>
+                <div className='mb-5'>
+                  <button
+                    onClick={handleGoogleLogIn}
+                    className='inline-flex border w-full items-center justify-center py-2 px-4 font-medium transition-colors duration-200 rounded-lg text-gray-300 hover:bg-gray-700'
+                  >
+                    <img src={googleLogo} className="w-9 mr-2" alt="" />
+                    Google Login
+                  </button>
+                </div>
+                <div className='mb-5'>
+                  <button
+                    onClick={handleGithubLogIn}
+                    className='inline-flex border w-full items-center justify-center py-2 px-4 font-medium transition-colors duration-200 rounded-lg text-gray-300 hover:bg-gray-700'
+                  >
+                    <img src={githubLogo} className="w-9 mr-2" alt="" />
+                    Github Login
+                  </button>
+                </div>
               </div>
             </div>
           </div>
