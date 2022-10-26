@@ -1,6 +1,7 @@
 import React from "react";
 import { FaDownload } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
+import Pdf from "react-to-pdf";
 
 const CourseDetails = () => {
   const { courseId, courseName, img, description, details } = useLoaderData();
