@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
-import CourseCard from "../../components/Course/CourseCard";
+import CourseCard from "../../components/CourseCard/CourseCard";
 
 const Courses = () => {
   const coursesCategory = useLoaderData();
