@@ -144,7 +144,7 @@ const Login = () => {
                       type="submit"
                       className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide transition-colors duration-20 rounded shadow-md bg-zinc-400 hover:bg-zinc-500"
                     >
-                      Subscribe
+                      Login
                     </button>
                   </div>
                   <p className="text-xs text-gray-500 sm:text-sm">
@@ -161,8 +161,11 @@ const Login = () => {
                     <img src={googleLogo} className="w-9 mr-2" alt="" />
                     Google Login
                   </button>
+                  <div className='text-orange-500 mt-2 text-center'>
+                    {errors.githubError}
+                  </div>
                 </div>
-                <div className='mb-5'>
+                <div>
                   <button
                     onClick={handleGithubLogIn}
                     className='inline-flex border w-full items-center justify-center py-2 px-4 font-medium transition-colors duration-200 rounded-lg text-gray-300 hover:bg-gray-700'
@@ -170,6 +173,9 @@ const Login = () => {
                     <img src={githubLogo} className="w-9 mr-2" alt="" />
                     Github Login
                   </button>
+                  <div className='text-orange-500 mt-2 text-center'>
+                    {errors.githubError}
+                  </div>
                 </div>
               </div>
             </div>
