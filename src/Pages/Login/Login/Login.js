@@ -101,39 +101,7 @@ const Login = () => {
                 <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                   Please Login
                 </h3>
-                <form>
-                  <div className="mb-1 sm:mb-2">
-                    <label
-                      htmlFor="firstName"
-                      className="inline-block mb-1 font-medium"
-                    >
-                      First name
-                    </label>
-                    <input
-                      placeholder="John"
-                      required
-                      type="text"
-                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
-                      id="firstName"
-                      name="firstName"
-                    />
-                  </div>
-                  <div className="mb-1 sm:mb-2">
-                    <label
-                      htmlFor="lastName"
-                      className="inline-block mb-1 font-medium"
-                    >
-                      Last name
-                    </label>
-                    <input
-                      placeholder="Doe"
-                      required
-                      type="text"
-                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
-                      id="lastName"
-                      name="lastName"
-                    />
-                  </div>
+                <form onSubmit={handleFormSubmit}>
                   <div className="mb-1 sm:mb-2">
                     <label
                       htmlFor="email"
@@ -144,11 +112,30 @@ const Login = () => {
                     <input
                       placeholder="john.doe@example.org"
                       required
-                      type="text"
+                      type="email"
                       className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
                       id="email"
                       name="email"
                     />
+                  </div>
+                  <div className="mb-1 sm:mb-2">
+                    <label
+                      htmlFor="password"
+                      className="inline-block mb-1 font-medium"
+                    >
+                      Password
+                    </label>
+                    <input
+                      placeholder="password"
+                      required
+                      type="password"
+                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                      id="password"
+                      name="password"
+                    />
+                  </div>
+                  <div className='text-red-500'>
+                    {errors.loginError}
                   </div>
                   <div className="mt-4 mb-2 sm:mb-4">
                     <button
@@ -159,7 +146,7 @@ const Login = () => {
                     </button>
                   </div>
                   <p className="text-xs text-gray-500 sm:text-sm">
-                    Already have an account? <Link to='/login' className="text-cyan-500 underline pl-1 pr-2">login</Link>
+                    Don't have an account? <Link to='/register' className="text-cyan-500 underline pl-1 pr-2">Please Register</Link>
                   </p>
                 </form>
               </div>
