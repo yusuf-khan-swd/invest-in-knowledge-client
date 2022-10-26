@@ -5,6 +5,8 @@ import { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import googleLogo from '../../../assets/images/google.png';
+import githubLogo from '../../../assets/images/github.png';
 
 const Register = () => {
   const [errors, setErrors] = useState({
@@ -105,44 +107,141 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <h2>Register Page</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div>
-          <label htmlFor="name">Full Name: </label>
-          <input type="text" name='name' id='name' />
+    <div className='bg-gray-600 pb-8'>
+      <div className="container mx-auto">
+        <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+          <div className="flex flex-col items-center justify-between xl:flex-row">
+            <div className="w-full max-w-xl xl:px-8 xl:w-5/12 mx-auto">
+              <div className="bg-gray-300 rounded shadow-2xl p-7 sm:p-10">
+                <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
+                  Please Register
+                </h3>
+                <form onSubmit={handleFormSubmit}>
+                  <div className="mb-1 sm:mb-2">
+                    <label
+                      htmlFor="name"
+                      className="inline-block mb-1 font-medium"
+                    >
+                      Your Name
+                    </label>
+                    <input
+                      placeholder="John Doe"
+                      required
+                      type="text"
+                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:border-2 focus:border-purple-500 focus:outline-none focus:shadow-outline"
+                      id="name"
+                      name="name"
+                    />
+                  </div>
+                  <div className="mb-1 sm:mb-2">
+                    <label
+                      htmlFor="photoURL"
+                      className="inline-block mb-1 font-medium"
+                    >
+                      Photo URL
+                    </label>
+                    <input
+                      placeholder=""
+                      type="text"
+                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:border-2 focus:border-purple-500 focus:outline-none focus:shadow-outline"
+                      id="photoURL"
+                      name="photo"
+                    />
+                  </div>
+                  <div className="mb-1 sm:mb-2">
+                    <label
+                      htmlFor="email"
+                      className="inline-block mb-1 font-medium"
+                    >
+                      E-mail
+                    </label>
+                    <input
+                      placeholder="john.doe@example.org"
+                      required
+                      type="email"
+                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:border-2 focus:border-purple-500 focus:outline-none focus:shadow-outline"
+                      id="email"
+                      name="email"
+                    />
+                  </div>
+                  <div className="mb-1 sm:mb-2">
+                    <label
+                      htmlFor="password"
+                      className="inline-block mb-1 font-medium"
+                    >
+                      Password
+                    </label>
+                    <input
+                      placeholder="password"
+                      required
+                      type="password"
+                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:border-2 focus:border-purple-500 focus:outline-none focus:shadow-outline"
+                      id="password"
+                      name="password"
+                    />
+                  </div>
+                  <div className="mb-1 sm:mb-2">
+                    <label
+                      htmlFor="confirm"
+                      className="inline-block mb-1 font-medium"
+                    >
+                      Confirm Password
+                    </label>
+                    <input
+                      placeholder="confirm password"
+                      required
+                      type="password"
+                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:border-2 focus:border-purple-500 focus:outline-none focus:shadow-outline"
+                      id="confirm"
+                      name="confirm"
+                    />
+                  </div>
+                  <div className='text-red-500'>
+                    {errors.registerError}
+                  </div>
+                  <div className="mt-4 mb-2 sm:mb-4">
+                    <button
+                      type="submit"
+                      className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide transition-colors duration-20 rounded shadow-md bg-zinc-400 hover:bg-zinc-500"
+                    >
+                      Sign Up
+                    </button>
+                  </div>
+                  <p className="text-xs text-gray-500 sm:text-sm">
+                    Don't have an account? <Link to='/register' className="text-cyan-500 underline pl-1 pr-2">Please Register</Link>
+                  </p>
+                </form>
+              </div>
+              <div className='mt-8'>
+                <div className='mb-5'>
+                  <button
+                    onClick={handleGoogleLogIn}
+                    className='inline-flex border w-full items-center justify-center py-2 px-4 font-medium transition-colors duration-200 rounded-lg text-gray-300 hover:bg-gray-700'
+                  >
+                    <img src={googleLogo} className="w-9 mr-2" alt="" />
+                    Google Sign Up
+                  </button>
+                  <div className='text-orange-500 mt-2 text-center'>
+                    {errors.googleError}
+                  </div>
+                </div>
+                <div>
+                  <button
+                    onClick={handleGithubLogIn}
+                    className='inline-flex border w-full items-center justify-center py-2 px-4 font-medium transition-colors duration-200 rounded-lg text-gray-300 hover:bg-gray-700'
+                  >
+                    <img src={githubLogo} className="w-9 mr-2" alt="" />
+                    Github Sign Up
+                  </button>
+                  <div className='text-orange-500 mt-2 text-center'>
+                    {errors.githubError}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <label htmlFor="photo">photoURL: </label>
-          <input type="text" name='photo' id='photo' />
-        </div>
-        <div>
-          <label htmlFor="email">Email: </label>
-          <input type="email" name='email' id='email' />
-        </div>
-        <div>
-          <label htmlFor="password">Password: </label>
-          <input type="password" name='password' id='password' />
-        </div>
-        <div>
-          <label htmlFor="confirm">Confirm Password: </label>
-          <input type="password" name='confirm' id='confirm' />
-        </div>
-        <div>
-          {errors.registerError}
-        </div>
-        <div>
-          <button type='submit'>Submit</button>
-          <button type='button'>Button</button>
-        </div>
-      </form>
-      <div>
-        Already have an account? <Link to='/login'>Login</Link>
       </div>
-      <button onClick={handleGoogleLogIn}>Google Sign In</button>
-      {errors.googleError}
-      <button onClick={handleGithubLogIn}>Github Sign In</button>
-      {errors.githubError}
     </div>
   );
 };
