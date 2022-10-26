@@ -99,7 +99,7 @@ const Login = () => {
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div className="flex flex-col items-center justify-between xl:flex-row">
             <div className="w-full max-w-xl xl:px-8 xl:w-5/12 mx-auto">
-              <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
+              <div className="bg-gray-300 rounded shadow-2xl p-7 sm:p-10">
                 <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                   Please Login
                 </h3>
@@ -115,7 +115,7 @@ const Login = () => {
                       placeholder="john.doe@example.org"
                       required
                       type="email"
-                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:border-2 focus:border-purple-500 focus:outline-none focus:shadow-outline"
                       id="email"
                       name="email"
                     />
@@ -131,7 +131,7 @@ const Login = () => {
                       placeholder="password"
                       required
                       type="password"
-                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded-lg shadow-sm appearance-none focus:border-2 focus:border-purple-500 focus:outline-none focus:shadow-outline"
                       id="password"
                       name="password"
                     />
