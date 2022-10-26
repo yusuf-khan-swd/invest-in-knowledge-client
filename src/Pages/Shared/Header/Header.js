@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import { FaUserAlt } from 'react-icons/fa';
-
+import logo from '../../../assets/logo/logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,21 +33,7 @@ const Header = () => {
               title="Company"
               className="inline-flex items-center"
             >
-              <svg
-                className="w-8 text-teal-accent-400"
-                viewBox="0 0 24 24"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeMiterlimit="10"
-                stroke="currentColor"
-                fill="none"
-              >
-                <rect x="3" y="1" width="7" height="12" />
-                <rect x="3" y="17" width="7" height="6" />
-                <rect x="14" y="1" width="7" height="6" />
-                <rect x="14" y="11" width="7" height="12" />
-              </svg>
+              <img src={logo} className="object-cover cursor-pointer w-16 h-16 rounded-full shadow dark:bg-gray-500" alt="" />
               <span className="ml-2 text-xl font-bold tracking-wide uppercase">
                 Invest In Knowledge
               </span>
