@@ -99,7 +99,7 @@ const Login = () => {
             <div className="w-full max-w-xl xl:px-8 xl:w-5/12 mx-auto">
               <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
                 <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
-                  Sign up for updates
+                  Please Login
                 </h3>
                 <form>
                   <div className="mb-1 sm:mb-2">
@@ -158,8 +158,8 @@ const Login = () => {
                       Subscribe
                     </button>
                   </div>
-                  <p className="text-xs text-gray-600 sm:text-sm">
-                    Already have an account? <Link to='/login' className="text-purple-900">login</Link>
+                  <p className="text-xs text-gray-500 sm:text-sm">
+                    Already have an account? <Link to='/login' className="text-cyan-500 underline pl-1 pr-2">login</Link>
                   </p>
                 </form>
               </div>
