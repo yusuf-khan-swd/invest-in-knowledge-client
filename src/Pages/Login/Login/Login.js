@@ -92,32 +92,87 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h2>Login Page</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div>
-          <label htmlFor="email">Email: </label>
-          <input type="email" name='email' id='email' />
+    <div className='bg-gray-600'>
+      <div className="container mx-auto">
+        <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+          <div className="flex flex-col items-center justify-between xl:flex-row">
+            <div className="w-full max-w-xl xl:px-8 xl:w-5/12 mx-auto">
+              <div className="bg-white rounded shadow-2xl p-7 sm:p-10">
+                <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
+                  Sign up for updates
+                </h3>
+                <form>
+                  <div className="mb-1 sm:mb-2">
+                    <label
+                      htmlFor="firstName"
+                      className="inline-block mb-1 font-medium"
+                    >
+                      First name
+                    </label>
+                    <input
+                      placeholder="John"
+                      required
+                      type="text"
+                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                      id="firstName"
+                      name="firstName"
+                    />
+                  </div>
+                  <div className="mb-1 sm:mb-2">
+                    <label
+                      htmlFor="lastName"
+                      className="inline-block mb-1 font-medium"
+                    >
+                      Last name
+                    </label>
+                    <input
+                      placeholder="Doe"
+                      required
+                      type="text"
+                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                      id="lastName"
+                      name="lastName"
+                    />
+                  </div>
+                  <div className="mb-1 sm:mb-2">
+                    <label
+                      htmlFor="email"
+                      className="inline-block mb-1 font-medium"
+                    >
+                      E-mail
+                    </label>
+                    <input
+                      placeholder="john.doe@example.org"
+                      required
+                      type="text"
+                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
+                      id="email"
+                      name="email"
+                    />
+                  </div>
+                  <div className="mt-4 mb-2 sm:mb-4">
+                    <button
+                      type="submit"
+                      className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide transition-colors duration-20 rounded shadow-md bg-zinc-400 hover:bg-zinc-500"
+                    >
+                      Subscribe
+                    </button>
+                  </div>
+                  <p className="text-xs text-gray-600 sm:text-sm">
+                    Already have an account? <Link to='/login' className="text-purple-900">login</Link>
+                  </p>
+                </form>
+              </div>
+              <div>
+                <button>Google Login</button>
+              </div>
+              <div>
+                <button>Github Login</button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <label htmlFor="password">Password: </label>
-          <input type="password" name='password' id='password' />
-        </div>
-        <div>
-          {errors.loginError}
-        </div>
-        <div>
-          <button type='submit'>Submit</button>
-          <button type='button'>Button</button>
-        </div>
-      </form>
-      <div>
-        Don't have an account? <Link to='/register'>Create an account</Link>
       </div>
-      <button onClick={handleGoogleLogIn}>Google Sign In</button>
-      {errors.googleError}
-      <button onClick={handleGithubLogIn}>Github Sign In</button>
-      {errors.githubError}
     </div>
   );
 };
