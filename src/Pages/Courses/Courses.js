@@ -5,7 +5,7 @@ import CourseCard from "../../components/CourseCard/CourseCard";
 const Courses = () => {
   const coursesCategory = useLoaderData();
   return (
-    <div className="grid grid-cols-5 container mx-auto">
+    <div className="grid grid-cols-5 container mx-auto pt-12 pb-20">
       <div className="col-span-1">
         {coursesCategory.map((course) => (
           <p className="underline m-2 mb-3" key={course.id}>
