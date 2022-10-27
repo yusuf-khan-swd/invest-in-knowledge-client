@@ -162,7 +162,7 @@ const Login = () => {
                     Google Login
                   </button>
                   <div className='text-orange-500 mt-2 text-center'>
-                    {errors.githubError}
+                    {errors.googleError}
                   </div>
                 </div>
                 <div>
