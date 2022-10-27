@@ -4,7 +4,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import Pdf from "react-to-pdf";
 
 const CourseDetails = () => {
-  const { courseId, courseName, img, description, details } = useLoaderData();
+  const { courseId, courseName, img, description, details, price } = useLoaderData();
   const ref = React.createRef();
 
   return (
@@ -33,6 +33,7 @@ const CourseDetails = () => {
           />
           <span className="absolute inset-0 flex items-center justify-center w-full h-full transition-colors duration-300 bg-gray-900 bg-opacity-50 hover:bg-opacity-25"></span>
         </div>
+        <h2 className="text-3xl font-bold mb-3">Price: <span className="text-orange-400">${price}</span></h2>
         <div className="text-left">
           <p className="mb-5 text-base text-gray-700 md:text-lg">
             {description}
