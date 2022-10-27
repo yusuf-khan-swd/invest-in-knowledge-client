@@ -122,7 +122,7 @@ const Register = () => {
                       htmlFor="name"
                       className="inline-block mb-1 font-medium"
                     >
-                      Your Name
+                      Full Name
                     </label>
                     <input
                       placeholder="John Doe"
