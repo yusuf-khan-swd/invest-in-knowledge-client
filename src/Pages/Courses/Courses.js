@@ -1,12 +1,18 @@
 import React from "react";
+import { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import CourseCard from "../../components/CourseCard/CourseCard";
+import { ThemeContext } from "../../contexts/ThemeProvider/ThemeProvider";
 
 const Courses = () => {
   const coursesCategory = useLoaderData();
+  const { darkTheme } = useContext(ThemeContext);
+
+  console.log(darkTheme)
+
   return (
     <div className="container mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-5 pt-12 pb-20 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-5 pt-12 pb-20 gap-4 ">
         <div className="col-span-1 ml-3">
           <div className="sticky top-2">
             {coursesCategory.map((course) => (

@@ -5,9 +5,11 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import { FaUserAlt } from 'react-icons/fa';
 import logo from '../../../assets/logo/logo.png';
+import { ThemeContext } from '../../../contexts/ThemeProvider/ThemeProvider';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { setDarkTheme } = useContext(ThemeContext);
 
   const { user, logOut } = useContext(AuthContext);
 
@@ -24,6 +26,8 @@ const Header = () => {
 
   const handleDarkTheme = event => {
     const isChecked = event.target.checked;
+
+    setDarkTheme(isChecked);
 
     if (isChecked) {
       toast.success('YAY!! Dark Theme On.')
