@@ -4,11 +4,14 @@ import { Link, useLoaderData } from "react-router-dom";
 import Pdf from "react-to-pdf";
 
 const CourseDetails = () => {
+  // destructure the object from loader 
   const { courseId, courseName, img, description, details, price } = useLoaderData();
+
+  // Create ref for pdf-to-react package
   const ref = React.createRef();
 
   return (
-    <div ref={ref} className="rounded px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div ref={ref} className="border-4 my-10 rounded px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-md md:px-24 lg:px-8 lg:py-20">
       <div className="mb-16 md:mb-0 md:max-w-xl sm:mx-auto text-center">
         <div>
           <Link to="/courses">

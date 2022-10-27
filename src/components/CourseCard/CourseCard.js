@@ -6,7 +6,7 @@ const CourseCard = ({ course }) => {
   return (
     <div className='mb-8'>
       <Link className='cursor-default' to={`/courses/${courseId}`}>
-        <div className="border rounded px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div className="border-2 rounded px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-md md:px-24 lg:px-8 lg:py-20">
           <div className="relative mb-6 sm:mx-auto md:mb-10 md:max-w-md lg:max-w-lg">
             <img
               className="object-cover w-full h-56 rounded shadow-lg md:h-64 lg:h-80"
