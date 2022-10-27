@@ -1,8 +1,25 @@
-# Getting Started with Create React App
+# Invest In Knowledge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project Live Site Link [Invest In Knowledge](https://learning-platform-8c374.web.app/)
 
-## Available Scripts
+## Feature & Functionality
+
+- This project has routing. Using routing based on url we can show user different component.
+- And have private routing feature to block unauthorize user.
+- If a user is logged in, only then a user can access this private route.
+- User can login or register with only email and password or with Google And Github.
+- In courses route we show all courses. With name as sidebar and img and name with content details.
+- After a course is click it will redirect to course details route where we show details of the course with Price.
+
+## Technology Used In This Project
+
+- This project create with `REACT` Library.
+- `react-router-dom` package for routing.
+- `firebase` for authentication and hosting the site.
+- `tailwind` used as a css framework for handling the style.
+- `react-to-pdf` using this package we enable download the page as pdf.
+- `react-hot-toast` package used for showing toast as alert.
+- `react-icons` used for icons
 
 In the project directory, you can run:
 
