@@ -208,7 +208,7 @@ const Register = () => {
                     </button>
                   </div>
                   <p className="text-xs text-gray-500 sm:text-sm">
-                    Don't have an account? <Link to='/register' className="text-cyan-500 underline pl-1 pr-2">Please Register</Link>
+                    Already an account? <Link to='/login' className="text-cyan-500 underline pl-1 pr-2">Please Login</Link>
                   </p>
                 </form>
               </div>
