@@ -40,14 +40,14 @@ const Home = () => {
               <button
                 className='inline-flex border uppercase m-2 items-center justify-center py-2 px-4 font-medium transition-colors duration-200 rounded-lg text-gray-300 bg-gray-700 hover:bg-gray-600'
               >
-                Login
+                Please Login
               </button>
             </Link>
             <Link to='/register'>
               <button
                 className='inline-flex border uppercase m-2 items-center justify-center py-2 px-4 font-medium transition-colors duration-200 rounded-lg text-gray-300 bg-gray-700 hover:bg-gray-600'
               >
-                Register
+                Please Register
               </button>
             </Link>
           </div>
