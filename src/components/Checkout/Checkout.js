@@ -1,8 +1,19 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Checkout = () => {
   const { courseId, courseName, img, description, details } = useLoaderData();
+  const { user } = useContext(AuthContext);
+
+  useEffect(() => {
+    if (user.displayName) {
+      toast.success(`Congratulation on your purchase ${user.displayName}`)
+    }
+  }, [user])
 
   return (
     <div className="rounded px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
