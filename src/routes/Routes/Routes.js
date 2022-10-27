@@ -28,17 +28,17 @@ export const router = createBrowserRouter([
       {
         path: '/courses',
         element: <Courses></Courses>,
-        loader: () => fetch('http://localhost:5000/courses')
+        loader: () => fetch('https://b610-lerning-platform-server-side-yusuf-khan-swd.vercel.app/courses')
       },
       {
         path: '/courses/:courseId',
         element: <CourseDetails></CourseDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.courseId}`)
+        loader: ({ params }) => fetch(`https://b610-lerning-platform-server-side-yusuf-khan-swd.vercel.app/courses/${params.courseId}`)
       },
       {
         path: '/checkout/:courseId',
         element: <PrivateRoutes><Checkout></Checkout></PrivateRoutes>,
-        loader: ({ params }) => fetch(`http://localhost:5000/checkout/${params.courseId}`)
+        loader: ({ params }) => fetch(`https://b610-lerning-platform-server-side-yusuf-khan-swd.vercel.app/checkout/${params.courseId}`)
       },
       {
         path: '/faq',
