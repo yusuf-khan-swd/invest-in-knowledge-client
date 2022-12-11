@@ -9,13 +9,13 @@ const Courses = () => {
   const { darkTheme } = useContext(ThemeContext);
 
   return (
-    <div className={`${darkTheme ? 'bg-gray-400' : 'bg-white'}`}>
+    <div className={`${darkTheme ? 'bg-gray-600' : 'bg-white'}`}>
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-5 pt-12 pb-20 gap-4">
           <div className="col-span-1 ml-3">
             <div className="sticky top-2">
               {coursesCategory.map((course) => (
-                <p title={course.courseName} className={`md:underline mb-3 ${darkTheme ? 'text-gray-100' : 'text-blue-900'}`} key={course.id}>
+                <p title={course.courseName} className={`mb-1 font-semibold hover:underline ${darkTheme ? 'text-gray-100' : 'text-blue-900'}`} key={course.id}>
                   <Link to={`/courses/${course.courseId}`}>{course.courseName}</Link>
                 </p>
               ))}
