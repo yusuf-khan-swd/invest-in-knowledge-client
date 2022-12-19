@@ -180,31 +180,17 @@ const Header = () => {
                   <div className="p-5 bg-white border rounded shadow-sm">
                     <div className="flex items-center justify-between mb-4">
                       <div>
-                        <a
-                          href="/"
+                        <Link
+                          to="/"
                           aria-label="Company"
                           title="Company"
                           className="inline-flex items-center"
                         >
-                          <svg
-                            className="w-8 text-deep-white"
-                            viewBox="0 0 24 24"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeMiterlimit="10"
-                            stroke="currentColor"
-                            fill="none"
-                          >
-                            <rect x="3" y="1" width="7" height="12" />
-                            <rect x="3" y="17" width="7" height="6" />
-                            <rect x="14" y="1" width="7" height="6" />
-                            <rect x="14" y="11" width="7" height="12" />
-                          </svg>
-                          <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                            Company
+
+                          <span className="text-xl font-bold tracking-wide text-gray-800 capitalize">
+                            Invest In Knowledge
                           </span>
-                        </a>
+                        </Link>
                       </div>
                       <div>
                         <button
@@ -229,7 +215,7 @@ const Header = () => {
                             to="/home"
                             aria-label="Our home"
                             title="Our home"
-                            className="font-medium tracking-wide transition-colors duration-200 hover:text-black"
+                            className="font-medium tracking-wide transition-colors duration-200 text-gray-400 hover:text-black"
                           >
                             Home
                           </Link>
@@ -239,7 +225,7 @@ const Header = () => {
                             to="/courses"
                             aria-label="Our courses"
                             title="Our courses"
-                            className="font-medium tracking-wide transition-colors duration-200 hover:text-black"
+                            className="font-medium tracking-wide transition-colors duration-200 text-gray-400 hover:text-black"
                           >
                             Courses
                           </Link>
@@ -249,7 +235,7 @@ const Header = () => {
                             to="/faq"
                             aria-label="faq"
                             title="Frequently asked question"
-                            className="font-medium tracking-wide transition-colors duration-200 hover:text-black"
+                            className="font-medium tracking-wide transition-colors duration-200 text-gray-400 hover:text-black"
                           >
                             FAQ
                           </Link>
@@ -259,7 +245,7 @@ const Header = () => {
                             to="/blog"
                             aria-label="blog"
                             title="Blog"
-                            className="font-medium tracking-wide transition-colors duration-200 hover:text-black"
+                            className="font-medium tracking-wide transition-colors duration-200 text-gray-400 hover:text-black"
                           >
                             Blog
                           </Link>
