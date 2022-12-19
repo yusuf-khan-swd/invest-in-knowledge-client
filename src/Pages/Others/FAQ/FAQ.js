@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../../contexts/ThemeProvider/ThemeProvider";
 
 const FAQ = () => {
+  const { darkTheme } = useContext(ThemeContext);
+
   return (
-    <div>
-      <section className="dark:bg-gray-800 dark:text-gray-100 pb-20">
+    <div className="m-2">
+      <section className={`pb-20 ${darkTheme ? 'bg-gray-700 text-gray-300' : 'bg-white'}`}>
         <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
           <p className="p-2 text-sm font-medium tracking-wider text-center uppercase">
             How it works
@@ -14,7 +17,7 @@ const FAQ = () => {
           <div className="grid gap-10 md:gap-8 sm:p-3 md:grid-cols-2 lg:px-12 xl:px-32">
             <div>
               <h3 className="font-semibold">Why An FAQ Resource?</h3>
-              <p className="mt-1 dark:text-gray-400">
+              <p className="mt-1 text-gray-400">
                 Firstly, FAQ pages can bring new visitors to your website via
                 organic search and drive them quickly to related pages – most
                 typically deeper blog pages and service pages closely related to
@@ -23,7 +26,7 @@ const FAQ = () => {
             </div>
             <div>
               <h3 className="font-semibold">Why FAQ Pages Are A Priority</h3>
-              <p className="mt-1 dark:text-gray-400">
+              <p className="mt-1 text-gray-400">
                 FAQ pages continue to be a priority area for SEO and digital
                 marketing professionals. An FAQ page is one of the simplest ways
                 to improve your site and help site visitors and users. Your FAQ
@@ -58,7 +61,6 @@ const FAQ = () => {
           </details>
         </div>
       </section>
-      <hr />
     </div>
   );
 };
