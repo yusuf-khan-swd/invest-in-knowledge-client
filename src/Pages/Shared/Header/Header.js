@@ -49,8 +49,8 @@ const Header = () => {
               title="Company"
               className="inline-flex items-center"
             >
-              <img src={logo} className="object-cover cursor-pointer w-16 h-16 rounded-full shadow dark:bg-gray-500" alt="" />
-              <span className="ml-2 text-xl font-bold tracking-wide uppercase">
+              <img src={logo} className="object-cover cursor-pointer w-9 h-9" alt="" />
+              <span className="ml-2 text-xl sm:text-2xl font-bold tracking-wide capitalize">
                 Invest In Knowledge
               </span>
             </Link>
@@ -96,12 +96,12 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <label htmlFor="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer text-gray-400 dark:text-gray-400">
+                <label htmlFor="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer text-gray-400">
                   <span className="text-gray-300">Light</span>
                   <span className="relative">
                     <input id="Toggle1" onClick={handleDarkTheme} type="checkbox" className="hidden peer" />
-                    <div className="w-10 h-6 rounded-full shadow-inner bg-gray-400 peer-checked:bg-violet-400 dark:bg-gray-400 peer-checked:dark:bg-violet-400"></div>
-                    <div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto bg-gray-800 dark:bg-gray-800"></div>
+                    <div className="w-10 h-6 rounded-full shadow-inner bg-gray-400 peer-checked:bg-violet-400 peer-checked"></div>
+                    <div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto bg-gray-800"></div>
                   </span>
                   <span className="text-gray-300">Dark</span>
                 </label>
@@ -112,7 +112,7 @@ const Header = () => {
                     <li>
                       {
                         user?.photoURL ?
-                          <img alt="" src={user?.photoURL} title={user?.displayName} className="object-cover cursor-pointer w-12 h-12 rounded-full shadow dark:bg-gray-500" />
+                          <img alt="" src={user?.photoURL} title={user?.displayName} className="object-cover cursor-pointer w-12 h-12 rounded-full shadow" />
                           :
                           <FaUserAlt title={user?.displayName} className='text-xl cursor-pointer'></FaUserAlt>
                       }
@@ -265,12 +265,12 @@ const Header = () => {
                           </Link>
                         </li>
                         <li>
-                          <label htmlFor="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer dark:text-gray-400">
+                          <label htmlFor="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer">
                             <span>Light</span>
                             <span className="relative">
                               <input id="Toggle1" onClick={handleDarkTheme} type="checkbox" className="hidden peer" />
-                              <div className="w-10 h-6 rounded-full shadow-inner dark:bg-gray-400 peer-checked:dark:bg-violet-400"></div>
-                              <div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto dark:bg-gray-800"></div>
+                              <div className="w-10 h-6 rounded-full shadow-inner peer-checked"></div>
+                              <div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto"></div>
                             </span>
                             <span>Dark</span>
                           </label>
@@ -281,7 +281,7 @@ const Header = () => {
                               <li>
                                 {
                                   user?.photoURL ?
-                                    <img alt="" src={user?.photoURL} title={user?.displayName} className="object-cover cursor-pointer w-12 h-12 rounded-full shadow dark:bg-gray-500" />
+                                    <img alt="" src={user?.photoURL} title={user?.displayName} className="object-cover cursor-pointer w-12 h-12 rounded-full shadow" />
                                     :
                                     <FaUserAlt title={user?.displayName} className='text-xl cursor-pointer'></FaUserAlt>
                                 }

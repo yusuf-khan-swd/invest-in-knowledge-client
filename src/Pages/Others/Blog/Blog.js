@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../../contexts/ThemeProvider/ThemeProvider";
 
 const Blog = () => {
+  const { darkTheme } = useContext(ThemeContext);
+
   return (
-    <section className="dark:bg-gray-800 dark:text-gray-100">
+    <section className={`${darkTheme ? 'bg-gray-700 text-gray-300' : 'bg-white'}`}>
       <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
         <p className="p-2 text-sm font-medium tracking-wider text-center uppercase">
           Question and Answer
@@ -13,7 +16,7 @@ const Blog = () => {
         <div className="grid gap-10 md:gap-8 sm:p-3 md:grid-cols-2 lg:px-12 xl:px-32">
           <div>
             <h3 className="font-semibold">What is cors?</h3>
-            <p className="mt-1 dark:text-gray-400">
+            <p className="mt-1">
               Its full Form is Cross-origin resource sharing. Its a resource
               sharing mechanism that allows restricted resources on a web
               page to be requested from another domain outside the domain from
@@ -26,7 +29,7 @@ const Blog = () => {
               Why are you using firebase ? What other options do you have to
               implement authentication?
             </h3>
-            <div className="mt-1 dark:text-gray-400">
+            <div className="mt-1">
               I mainly used firebase for authenticate a user with its build in
               authentication system. Also for hosting my website instance in
               netlify.
@@ -65,7 +68,7 @@ const Blog = () => {
           </div>
           <div>
             <h3 className="font-semibold">How does the private route work?</h3>
-            <div className="mt-1 dark:text-gray-400">
+            <div className="mt-1">
               <p>
                 In a route if we don't want to give access to an unauthorize
                 user. Then we use private route.
@@ -87,7 +90,7 @@ const Blog = () => {
           </div>
           <div>
             <h3 className="font-semibold">What is Node? How does Node work?</h3>
-            <div className="mt-1 dark:text-gray-400">
+            <div className="mt-1">
               <p>
                 Node.js is an open-source, cross-platform, back-end JavaScript
                 runtime environment that runs on a JavaScript Engine and
@@ -107,7 +110,6 @@ const Blog = () => {
           </div>
         </div>
       </div>
-      <hr />
     </section>
   );
 };
