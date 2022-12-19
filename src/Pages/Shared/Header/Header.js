@@ -39,9 +39,9 @@ const Header = () => {
   };
 
   return (
-    <nav>
+    <nav className='sticky top-0 z-50'>
       <div className={` ${darkTheme ? 'bg-gray-800 text-gray-300' : 'bg-slate-500 text-gray-300'}`}>
-        <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+        <div className="px-4 py-3 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
           <div className="relative flex items-center justify-between">
             <Link
               to="/"
@@ -112,7 +112,7 @@ const Header = () => {
                     <li>
                       {
                         user?.photoURL ?
-                          <img alt="" src={user?.photoURL} title={user?.displayName} className="object-cover cursor-pointer w-12 h-12 rounded-full shadow" />
+                          <img alt="" src={user?.photoURL} title={user?.displayName} className="object-cover cursor-pointer w-9 h-9 rounded-full shadow" />
                           :
                           <FaUserAlt title={user?.displayName} className='text-xl cursor-pointer'></FaUserAlt>
                       }
@@ -120,7 +120,7 @@ const Header = () => {
                     <li>
                       <button
                         onClick={handleLogOut}
-                        className="inline-flex items-center justify-center h-9 py px-4 outline font-medium transition-colors duration-200 rounded hover:text-gray-300"
+                        className="inline-flex items-center justify-center h-9 py-1 px-2 font-medium transition-colors duration-200 rounded border border-slate-400 hover:text-white"
                         aria-label="Sign up"
                         title="Sign up"
                       >

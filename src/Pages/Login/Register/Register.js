@@ -7,8 +7,11 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import googleLogo from '../../../assets/images/google.png';
 import githubLogo from '../../../assets/images/github.png';
+import { ThemeContext } from '../../../contexts/ThemeProvider/ThemeProvider';
 
 const Register = () => {
+  const { darkTheme } = useContext(ThemeContext);
+
   const [errors, setErrors] = useState({
     googleError: '',
     githubError: '',
@@ -107,12 +110,12 @@ const Register = () => {
   };
 
   return (
-    <div className='bg-gray-900 pb-8'>
+    <div className={`${darkTheme ? 'bg-gray-700 text-gray-300' : 'bg-white'}`}>
       <div className="container mx-auto">
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div className="flex flex-col items-center justify-between xl:flex-row">
             <div className="w-full max-w-xl xl:px-8 xl:w-5/12 mx-auto">
-              <div className="bg-gray-100 rounded shadow-2xl p-7 sm:p-10">
+              <div className="bg-gray-100 rounded p-7 sm:p-10">
                 <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                   Please Register
                 </h3>
