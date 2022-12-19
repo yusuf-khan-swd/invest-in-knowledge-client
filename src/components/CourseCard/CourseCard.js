@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { ThemeContext } from '../../contexts/ThemeProvider/ThemeProvider';
 
 const CourseCard = ({ course }) => {
+  const { darkTheme } = useContext(ThemeContext);
+
   const { courseId, courseName, description, img } = course;
   return (
     <div className='mb-8'>
       <Link className='cursor-default' to={`/courses/${courseId}`}>
-        <div className="border-2 rounded px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-md md:px-24 lg:px-8 lg:py-20">
+        <div className="border border-slate-400 rounded px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-md md:px-24 lg:px-8 lg:py-20">
           <div className="relative mb-6 sm:mx-auto md:mb-10 md:max-w-md lg:max-w-lg">
             <img
               className="object-cover w-full h-56 rounded shadow-lg md:h-64 lg:h-80"
@@ -19,10 +22,10 @@ const CourseCard = ({ course }) => {
             </span>
           </div>
           <div className="mb-16 md:mb-0 md:max-w-xl sm:mx-auto text-center">
-            <h2 className="mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+            <h2 className={`mb-5 font-sans text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none ${darkTheme ? 'text-gray-300' : ''}`}>
               {courseName}
             </h2>
-            <p className="mb-5 text-base text-gray-700 md:text-lg">
+            <p className={`mb-5 text-base md:text-lg ${darkTheme ? 'text-gray-300' : ''}`}>
               {description}
             </p>
             <div>
