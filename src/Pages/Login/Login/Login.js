@@ -159,7 +159,7 @@ const Login = () => {
                 <div className='mb-5'>
                   <button
                     onClick={handleGoogleLogIn}
-                    className='inline-flex border w-full items-center justify-center py-2 px-4 font-medium transition-colors duration-200 rounded-lg text-gray-300 hover:bg-gray-700'
+                    className='inline-flex border w-full items-center justify-center py-2 px-4 font-medium transition-colors duration-200 rounded-lg text-gray-300 bg-gray-700 hover:bg-gray-600'
                   >
                     <img src={googleLogo} className="w-9 mr-2" alt="" />
                     Google Login
@@ -171,7 +171,7 @@ const Login = () => {
                 <div>
                   <button
                     onClick={handleGithubLogIn}
-                    className='inline-flex border w-full items-center justify-center py-2 px-4 font-medium transition-colors duration-200 rounded-lg text-gray-300 hover:bg-gray-700'
+                    className='inline-flex border w-full items-center justify-center py-2 px-4 font-medium transition-colors duration-200 rounded-lg text-gray-300 bg-gray-700 hover:bg-gray-600'
                   >
                     <img src={githubLogo} className="w-9 mr-2" alt="" />
                     Github Login
