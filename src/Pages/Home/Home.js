@@ -32,7 +32,7 @@ const Home = () => {
               companies are interested in a prospective employee’s DSA knowledge,
               and why programmers should be interested in it too.
             </p>
-            <p className={`mb-6 max-w-md text-xs font-thin tracking-wide sm:text-sm sm:mx-auto ${darkTheme ? 'text-gray-300' : 'text-gray-500'}`}>
+            <p className={`mb-8 max-w-md text-xs font-thin tracking-wide sm:text-sm sm:mx-auto ${darkTheme ? 'text-gray-300' : 'text-gray-500'}`}>
               For many companies, such as Meta, Google, Microsoft, and Amazon,
               writing code is just the final step in a long process. The majority
               of a programmer’s time is actually spent considering the best way to
@@ -40,33 +40,35 @@ const Home = () => {
               algorithms to employ.
             </p>
             <div className="text-center">
-              <div className="">
+              <div>
                 <Link to='/courses'>
                   <button
-                    className='inline-flex border capitalize m-2 items-center justify-center py-2 p-2 font-medium transition-colors duration-200 rounded-lg text-gray-300 bg-gray-700 hover:bg-gray-600'
+                    className='inline-flex border uppercase items-center justify-center py-1 px-4 font-medium transition-colors duration-200 rounded-full text-gray-300 bg-gray-700 hover:bg-gray-600'
                   >
                     Go To Our Courses
                   </button>
                 </Link>
               </div>
-              <Link to='/login'>
-                <button
-                  className='inline-flex border uppercase m-2 items-center justify-center py-2 w-28 font-medium transition-colors duration-200 rounded-lg text-gray-300 bg-gray-700 hover:bg-gray-600'
-                >
-                  Login
-                </button>
-              </Link>
-              <Link to='/register'>
-                <button
-                  className='inline-flex border uppercase m-2 items-center justify-center py-2 w-28 font-medium transition-colors duration-200 rounded-lg text-gray-300 bg-gray-700 hover:bg-gray-600'
-                >
-                  Register
-                </button>
-              </Link>
+              <div>
+                <Link to='/login'>
+                  <button
+                    className='inline-flex border text-xs uppercase m-2 items-center justify-center py-1 w-28 font-medium transition-colors duration-200 rounded-full text-gray-300 bg-gray-700 hover:bg-gray-600'
+                  >
+                    Login
+                  </button>
+                </Link>
+                <Link to='/register'>
+                  <button
+                    className='inline-flex border text-xs uppercase m-2 items-center justify-center py-1 w-28 font-medium transition-colors duration-200 rounded-full text-gray-300 bg-gray-700 hover:bg-gray-600'
+                  >
+                    Register
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-        <h2 className="text-center font-bold text-3xl mb-4">Available Courses</h2>
+        <h2 className="text-center font-bold text-3xl mb-6">Available Courses</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 container mx-auto mb-16">
           {
             categories.map(category => <p key={category.id}>
