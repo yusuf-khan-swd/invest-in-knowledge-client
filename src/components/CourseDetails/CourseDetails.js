@@ -13,8 +13,8 @@ const CourseDetails = () => {
   const ref = React.createRef();
 
   return (
-    <div className="m-2">
-      <div className={`py-10 ${darkTheme ? 'bg-gray-700 text-gray-200' : 'bg-white'}`}>
+    <div className={`py-10 ${darkTheme ? 'bg-gray-700 text-gray-200' : 'bg-white'}`}>
+      <div className="m-2">
         <div ref={ref} className="my-10 border border-slate-400 rounded px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-md md:px-24 lg:px-8 lg:py-20">
           <div className="mb-16 md:mb-0 md:max-w-xl sm:mx-auto text-center">
             <div>
