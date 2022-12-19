@@ -40,7 +40,7 @@ const Header = () => {
 
   return (
     <nav>
-      <div className={` ${darkTheme ? 'bg-gray-800 text-gray-400' : 'bg-slate-500'}`}>
+      <div className={` ${darkTheme ? 'bg-gray-800 text-gray-300' : 'bg-slate-500 text-gray-300'}`}>
         <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
           <div className="relative flex items-center justify-between">
             <Link
@@ -97,13 +97,13 @@ const Header = () => {
               </li>
               <li>
                 <label htmlFor="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer text-gray-400 dark:text-gray-400">
-                  <span>Light</span>
+                  <span className="text-gray-300">Light</span>
                   <span className="relative">
                     <input id="Toggle1" onClick={handleDarkTheme} type="checkbox" className="hidden peer" />
                     <div className="w-10 h-6 rounded-full shadow-inner bg-gray-400 peer-checked:bg-violet-400 dark:bg-gray-400 peer-checked:dark:bg-violet-400"></div>
                     <div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto bg-gray-800 dark:bg-gray-800"></div>
                   </span>
-                  <span>Dark</span>
+                  <span className="text-gray-300">Dark</span>
                 </label>
               </li>
               {
