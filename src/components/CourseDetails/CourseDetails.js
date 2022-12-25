@@ -34,7 +34,7 @@ const CourseDetails = () => {
                 </button>}
               </Pdf>
             </div>
-            <div className="relative mb-6 sm:mx-auto md:mb-10 md:max-w-md lg:max-w-lg ">
+            <div className="relative mb-5 sm:mx-auto md:max-w-md lg:max-w-lg ">
               <img
                 className="object-cover rounded-3xl w-full h-56 shadow-lg md:h-64 lg:h-80"
                 src={img}
@@ -42,9 +42,9 @@ const CourseDetails = () => {
               />
               <span className="absolute rounded-3xl inset-0 flex items-center justify-center w-full h-full transition-colors duration-300 bg-gray-900 bg-opacity-50 hover:bg-opacity-25"></span>
             </div>
-            <h2 className="text-3xl font-bold mb-3">Price: <span className={`text-orange-400`}>${price}</span></h2>
+            <h2 className="text-3xl font-bold mb-5">Price: <span className={`text-orange-400`}>${price}</span></h2>
             <div className="text-left">
-              <p className="mb-5 text-base text-gray-700 md:text-lg">
+              <p className="mb-5 font-semibold">
                 {description}
               </p>
               <div className="cursor-pointer mt-3 mb-5">
